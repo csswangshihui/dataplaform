@@ -5,10 +5,10 @@ spring:
     name: platform-center
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://10.23.13.94:3306/jcxa?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    url: jdbc:mysql://127.0.0.1:3306/jcxa?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
     driverClassName: com.mysql.jdbc.Driver
-    username: jcxa
-    password: jcxa
+    username: root
+    password: 123456
   jpa:
       hibernate:
         ddl-auto: none
