@@ -1,0 +1,55 @@
+server:
+  port: 8081
+  session:
+    timeout: 1800000
+logging:
+  config: "classpath:log4j2-dev.yml"
+spring:
+  http:
+      multipart:
+        max-request-size: 150MB
+        max-file-size: 150MB
+  application:
+    name: spider-plactorm-center
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    loginUsername: admin
+    loginPassword: css123456
+    primary:
+      url: jdbc:mysql://10.23.13.207:3306/spider-dev-sys?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+      driverClassName: com.mysql.jdbc.Driver
+      username: spider-dev
+      password: css
+    secondary:
+      url: jdbc:mysql://10.23.13.207:3306/spider-dev-data?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+      driverClassName: com.mysql.jdbc.Driver
+      username: spider-dev
+      password: css
+  redis:
+    host: 10.23.13.207
+    port: 6378
+    password: css123456
+    pool:
+      max-idle: 100
+      min-idle: 1
+      max-active: 1000
+      max-wait: -1
+  jpa:
+      hibernate:
+        ddl-auto: none
+        show-sql: true
+        open-in-view: true
+
+swagger:
+  title: SPIDER PLATFORM CENTER APIs
+  version: 1.0
+  basePackage: com.css.spider.api
+config: #自定义配置
+  cluster-name: spider_cluster
+  zookeeper: zookeeper://10.23.13.207:2182
+  taskTrackerNodeGroup: test_trade_TaskTracker
+  jdbc:
+    url: jdbc:mysql://10.23.13.207:3306/spider-dev-sys?autoReconnect=true&failOverReadOnly=false&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: spider-dev
+    password: css
+

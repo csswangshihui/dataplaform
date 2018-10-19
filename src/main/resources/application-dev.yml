@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: platform-center
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://10.23.13.94:3306/jcxa?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+    driverClassName: com.mysql.jdbc.Driver
+    username: jcxa
+    password: jcxa
+  jpa:
+      hibernate:
+        ddl-auto: none
+        show-sql: true
+        open-in-view: true
+  dubbo:
+      application:
+        name: platform_provider
+      registry:
+        address: zookeeper://127.0.0.1:2181
+      protocol:
+        port: 20880
+      scan: com.css.platform.provider
+swagger:
+  title:  platform组api文档
+  version: 1.0
+  basePackage: com.css.platform.web
+
